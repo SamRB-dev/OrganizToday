@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <script
+      src="https://kit.fontawesome.com/eb42d2ec25.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1 class="title"><i class="fa-solid fa-clipboard-list"></i> To-Do-List</h1>
+    <br />
+    <div class="input-area">
+      <form action="{% url 'success' %}" method="POST"> 
+        <!--  -->
+        <!-- javascript:void(0) prevents page refresh on button click -->
+        {% csrf_token %}
+        <label for="title" id="label">Title</label><br />
+        <input type="text" name="title" id="title" oninput="countTitle()" placeholder="Cleaning the house" required />
+        <label class="char-count"><span id="chars">0</span>/150</label>
+        <br><br>
+        <label for="duration" id="label">Duration</label><br>
+        <input type="text" name="duration" id="duration" placeholder="8am to 9am" oninput="countDuration()" onload="countDuration()" required>
+        <label class="char-count"><span id="time">0</span>/50</label>
+        <br><br>
+        <button class="form-buttons" onclick="javascript:void(0);Reset()">Reset</button>
+        <button class="form-buttons submit">Submit</button>
+      </form>
+    </div>
+    <script src="{% static 'js/count.js' %}"></script>
+  </body>
+</html>
