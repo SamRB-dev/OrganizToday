@@ -16,28 +16,56 @@
     <h1 class="title"><i class="fa-solid fa-clipboard-list"></i> To-Do-List</h1>
     <br />
     <div class="input-area">
-      <form action="{% url 'success' %}" method="POST"> 
+      <form action="{% url 'success' %}" method="POST">
         <!--  -->
         <!-- javascript:void(0) prevents page refresh on button click -->
         {% csrf_token %}
         <label for="title" id="label">Title</label><br />
-        <input type="text" name="title" id="title" oninput="countTitle()" placeholder="Cleaning the house" required />
+        <input
+          type="text"
+          name="title"
+          id="title"
+          oninput="countTitle()"
+          placeholder="Cleaning the house"
+          required
+        />
         <label class="char-count"><span id="chars">0</span>/150</label>
-        <br><br>
-        <label for="duration" id="label">Duration</label><br>
-        <input type="text" name="duration" id="duration" placeholder="8am to 9am" oninput="countDuration()" onload="countDuration()" required>
+        <br /><br />
+        <label for="duration" id="label">Duration</label><br />
+        <input
+          type="text"
+          name="duration"
+          id="duration"
+          placeholder="8am to 9am"
+          oninput="countDuration()"
+          onload="countDuration()"
+          required
+        />
         <label class="char-count"><span id="time">0</span>/50</label>
-        <br><br>
-        <button class="form-buttons" onclick="javascript:void(0);Reset()">Reset</button>
+        <br /><br />
+        <button class="form-buttons" onclick="javascript:void(0);Reset()">
+          <!-- 
+            javascript:void(0): a Pseudo url preventing the reset button to roload page on
+            click 
+          -->
+          Reset
+        </button>
         <button class="form-buttons submit">Submit</button>
       </form>
     </div>
     <div class="output-area">
       <h1 class="title"><i class="fa-solid fa-clock"></i> Schedules</h1>
-      <br>
-      <div class="schedule input-area">
+      <br />
+      <div class="schedules">
         {% for schedule in data %}
-          <p>{{ schedule }}</p>
+        <div class="schedule">
+          <p>{{ schedule.title }}</p>
+        </div>
+        {% empty %}
+        <div class="if-empty">
+          <h1>All Caught Up</h1>
+          <h4>What Are You Doing Today?</h4>
+        </div>
         {% endfor %}
       </div>
     </div>
