@@ -36,7 +36,7 @@
           type="text"
           name="duration"
           id="duration"
-          placeholder="8am to 9am"
+          placeholder="1 hr (8am to 9am)"
           oninput="countDuration()"
           onload="countDuration()"
           required
@@ -58,14 +58,15 @@
       <br />
       <div class="schedules">
         {% for schedule in data %}
-        <div class="schedule">
-          <p>{{ schedule.title }}</p>
-        </div>
+          <div class="schedule">
+            <h3>{{ schedule.title }}</h3>
+            <h4><span id="caption">Duration:</span> {{ schedule.duration }}</h4>
+          </div>
         {% empty %}
-        <div class="if-empty">
-          <h1>All Caught Up</h1>
-          <h4>What Are You Doing Today?</h4>
-        </div>
+          <div id="if-empty">
+            <h1>All Caught Up</h1>
+            <h4>What Are You Doing Today?</h4>
+          </div>
         {% endfor %}
       </div>
     </div>
