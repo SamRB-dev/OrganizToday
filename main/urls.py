@@ -5,5 +5,5 @@ from . import views
 # URL pattern/URL routes
 urlpatterns = [
     path("", views.main,name='index'),
-    path("success/", views.createList, name='success')
+    path("success/", views.createList, name='success'),
 ]

@@ -32,6 +32,15 @@
         <button class="form-buttons submit">Submit</button>
       </form>
     </div>
+    <div class="output-area">
+      <h1 class="title"><i class="fa-solid fa-clock"></i> Schedules</h1>
+      <br>
+      <div class="schedule input-area">
+        {% for schedule in data %}
+          <p>{{ schedule }}</p>
+        {% endfor %}
+      </div>
+    </div>
     <script src="{% static 'js/count.js' %}"></script>
   </body>
 </html>

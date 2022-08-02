@@ -1,11 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from . import models
+from django.shortcuts import render #Rendering HTML
+from django.http import HttpResponse #HTTP response
+from . import models #DBs tables
 
 # Create your views here.
 '''Main Page'''
 def main(request: "Request") -> "Response":
-    return render(request,"main/index.html")
+    entries = models.Schedule.objects.all()
+    return render(request,"main/index.html",{'data':entries})
 
 '''Form Handling: Receiving & Processing Post Request'''
 def createList(request):
@@ -13,6 +14,6 @@ def createList(request):
         title = request.POST['title']
         duration = request.POST['duration']
         if ((title != '') and (duration != '')):
-            db = models.List(title=title,duration=duration)
+            db = models.Schedule(title=title,duration=duration)
             db.save()
     return render(request,"main/success.html")

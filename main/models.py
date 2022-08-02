@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class List(models.Model):
+class Schedule(models.Model):
     title: "Characters" = models.CharField(max_length=150,null=False)
     duration: "Time" = models.CharField(max_length=50,null=True)
 
