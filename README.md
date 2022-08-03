@@ -9,5 +9,5 @@
 * PostgresSQL
 
 ## URL
-#### [ site ] (https://organiztoday.herokuapp.com/)
+#### [OrganizToday](https://organiztoday.herokuapp.com/)
 
