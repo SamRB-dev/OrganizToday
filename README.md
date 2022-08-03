@@ -6,5 +6,8 @@
 
 ### Backend
 * Django
-* SQL (Will Depend on the hosting)
+* PostgresSQL
+
+## URL
+#### [ site ] (https://organiztoday.herokuapp.com/)
 
