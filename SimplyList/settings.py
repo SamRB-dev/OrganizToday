@@ -81,8 +81,12 @@ WSGI_APPLICATION = 'SimplyList.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'ddlrp8t2ttdnh1',
+        'USER': 'wffeemquakvhni',
+        'PASSWORD': '883967a2fc8e0e2e35300b56f51cb66275c75eb6f78c2aaa5dc20bd7b902b226',
+        'HOST': 'ec2-34-242-8-97.eu-west-1.compute.amazonaws.com',
+        'PORT': 5432
     }
 }
 
