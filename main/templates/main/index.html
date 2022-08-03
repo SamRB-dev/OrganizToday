@@ -59,8 +59,8 @@
       <div class="schedules">
         {% for schedule in data %}
           <div class="schedule">
-            <h3>{{ schedule.title }}</h3>
-            <h4><span id="caption">Duration:</span> {{ schedule.duration }}</h4>
+            <h2>{{ schedule.title }}</h2>
+            <h3><span id="caption">Duration:</span> {{ schedule.duration }}</h3>
           </div>
         {% empty %}
           <div id="if-empty">
