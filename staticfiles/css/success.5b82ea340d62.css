@@ -1,0 +1,44 @@
+@import url("/static/css/base/generic.1fd777206ee9.css");
+
+body {
+    margin-top: 10%;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main img {
+    width: 8%;
+}
+
+.main #status {
+    font-size: 6.5rem;
+}
+
+#message {
+    text-align: center;
+}
+
+.continue-button {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+}
+
+#button{
+    color: white;
+    font-weight: 700;
+    background-image: linear-gradient(#ff1b00,#a600ff);
+    padding: 1.2% 1%;
+    transition: 
+        color 0.5s ease-in;
+}
+
+#button:hover {
+    color: black;
+}

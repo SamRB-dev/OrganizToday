@@ -1,0 +1,1 @@
+web: gunicorn SimplyList.wsgi --log-file -
