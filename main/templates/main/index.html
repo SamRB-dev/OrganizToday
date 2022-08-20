@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDoList</title>
+    <title>OrganizToday</title>
     <link rel="stylesheet" href="{% static 'css/index.css' %}" />
     <script
       src="https://kit.fontawesome.com/eb42d2ec25.js"
@@ -58,19 +58,20 @@
       <br />
       <div class="schedules">
         {% for schedule in data %}
-          <div class="schedule">
-            <h2>{{ schedule.title }}</h2>
-            <h3><span id="caption">Duration:</span> {{ schedule.duration }}</h3>
-          </div>
-        {% empty %}
-          <div id="if-empty">
-            <h1>All Caught Up</h1>
-            <h4>What Are You Doing Today?</h4>
-          </div>
-        {% endfor %}
-        <div class="edit-delete">
-          
+        <div class="schedule">
+          <h2>{{ schedule.title }}</h2>
+          <h3><span id="caption">Duration:</span> {{ schedule.duration }}</h3>
         </div>
+        <div class="edit-delete">
+          <a href="#">Delete</a>
+          <a href="#">Update</a>
+        </div>
+        {% empty %}
+        <div id="if-empty">
+          <h1>All Caught Up</h1>
+          <h4>What Are You Doing Today?</h4>
+        </div>
+        {% endfor %}
       </div>
     </div>
     <script src="{% static 'js/count.js' %}"></script>
