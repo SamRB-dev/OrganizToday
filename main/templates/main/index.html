@@ -58,13 +58,15 @@
       <br />
       <div class="schedules">
         {% for schedule in data %}
-        <div class="schedule">
-          <h2>{{ schedule.title }}</h2>
-          <h3><span id="caption">Duration:</span> {{ schedule.duration }}</h3>
-        </div>
-        <div class="edit-delete">
-          <a href="#">Delete</a>
-          <a href="#">Update</a>
+        <div class="wrapper">
+          <div class="schedule">
+            <h2>{{ schedule.title }}</h2>
+            <h3><span id="caption">Duration:</span> {{ schedule.duration }}</h3>
+          </div>
+          <div class="edit-delete">
+            <a class="delete" href="{{schedule.id}}/delete">Delete</a>
+            <a class="edit" href="#">Update</a>
+          </div>
         </div>
         {% empty %}
         <div id="if-empty">
